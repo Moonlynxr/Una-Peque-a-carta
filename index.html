@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Carta mágica para Kim 💖</title>
+<!-- Fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Kalam&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    background: #000000;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), #000000 80%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+  }
+
+  .heart {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff5e78;
+    transform: rotate(-45deg);
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+    border-radius: 3px 3px 0 0;
+  }
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ff5e78;
+    border-radius: 50%;
+  }
+  .heart::before {
+    top: -7.5px;
+    left: 0;
+  }
+  .heart::after {
+    left: 7.5px;
+    top: 0;
+  }
+
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) rotate(-45deg);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-120px) rotate(-45deg);
+      opacity: 0;
+    }
+  }
+
+  .container {
+    perspective: 1200px;
+    cursor: pointer;
+    position: relative;
+    width: 320px;
+    height: 220px;
+  }
+
+  .envelope {
+    width: 100%;
+    height: 100%;
+    background: #ff5e78;
+    border-radius: 14px;
+    box-shadow:
+      0 10px 30px rgba(255, 94, 120, 0.6),
+      inset 0 0 20px rgba(255, 120, 150, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.8s ease;
+    z-index: 20;
+  }
+
+  .flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff7a94, #ff4e6e);
+    clip-path: polygon(0 0, 100% 0, 50% 50%);
+    transform-origin: top;
+    transition: transform 0.8s ease;
+    z-index: 25;
+    box-shadow: 0 5px 10px rgba(255, 90, 115, 0.8);
+  }
+
+  .envelope.open .flap {
+    transform: rotateX(-180deg);
+  }
+
+  .envelope.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .letter {
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 14px;
+    box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    opacity: 0;
+    pointer-events: none;
+    padding: 20px 25px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 18px;
+    color: #d9436f;
+    text-shadow: 0 0 3px rgba(255, 94, 120, 0.6);
+    transition: opacity 0.4s ease;
+  }
+
+  .letter.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .panel {
+    height: auto;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ffd1d8;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(255, 140, 160, 0.4);
+    transform: rotateX(90deg);
+    transform-origin: top;
+    transition: transform 0.7s ease, opacity 0.5s;
+    font-family: 'Kalam', cursive;
+    font-size: 15px;
+    color: #444;
+    line-height: 1.3;
+  }
+
+  .letter.open .panel {
+    transform: rotateX(0deg);
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    color: #ff5e78;
+    font-size: 24px;
+    text-shadow: 0 0 8px #ff8a9e;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" onclick="openMagic()">
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+  </div>
+
+  <div class="letter" id="letter">
+    <div class="panel">
+      <h3>🌸 Para Kim</h3>
+      <p>No sé cómo pasó, pero desde que llegaste a mi vida, algo dentro de mí cambió. Me haces sonreír con solo aparecer, me haces pensar en ti a cada rato. No te imaginas cuán especial te has vuelto para mí en tan poco tiempo.</p>
+    </div>
+    <div class="panel">
+      <p>No dejo de pensar en tus palabras, en cómo me haces sentir con cada mensaje, con cada nota de voz, con cada “buenos días”. Es como si hubieras encendido una lucecita en mí que no quiere apagarse. 🕯️</p>
+    </div>
+    <div class="panel">
+      <p>Y no es solo cursilería: realmente me importas, Kim. Me importas más de lo que debería tal vez, más de lo que imaginé que alguien podría importarme en tan poco tiempo. Te pienso con cariño, con ternura, con esas ganas locas de seguir conociéndote.</p>
+    </div>
+    <div class="panel">
+      <p>Me encariñé contigo, sí, y no me da miedo decirlo. Porque si algo he aprendido es que cuando alguien tan bonita como tú aparece en tu vida, hay que cuidarla, hay que valorarla. 💖</p>
+    </div>
+    <div class="panel">
+      <p>Así que gracias por ser tú. Por dejarme ser parte de tus días. Por hacerme sentir esto tan bonito. Te admiro, te pienso y... sí, también me gustas. Mucho. ✨</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openMagic() {
+    const envelope = document.getElementById('envelope');
+    const letter = document.getElementById('letter');
+
+    envelope.classList.add('open');
+
+    setTimeout(() => {
+      envelope.classList.add('fade-out');
+      letter.classList.add('open');
+    }, 900);
+
+    for(let i=0; i<12; i++) {
+      createHeart();
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.bottom = '-20px';
+      heart.style.animationDuration = (3 + Math.random()*2) + 's';
+      heart.style.animationDelay = (Math.random() * 2) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+  }
+</script>
+
+</body>
+</html>
